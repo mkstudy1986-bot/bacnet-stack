@@ -1,0 +1,609 @@
+# Instincts generated from https://github.com/mkstudy1986-bot/bacnet-stack
+# Generated: 2026-06-01T18:46:57.977Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: bacnet-stack-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/mkstudy1986-bot/bacnet-stack
+---
+
+# Bacnet Stack Commit Length
+
+## Action
+
+Write moderate-length commit messages (~79 characters)
+
+## Evidence
+
+- Average commit message length: 79 chars
+- Based on 200 commits
+
+---
+id: bacnet-stack-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/mkstudy1986-bot/bacnet-stack
+---
+
+# Bacnet Stack Naming Files
+
+## Action
+
+Use camelCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: camelCase
+
+---
+id: bacnet-stack-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/mkstudy1986-bot/bacnet-stack
+---
+
+# Bacnet Stack Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: bacnet-stack-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/mkstudy1986-bot/bacnet-stack
+---
+
+# Bacnet Stack Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: bacnet-stack-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/mkstudy1986-bot/bacnet-stack
+---
+
+# Bacnet Stack Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: bacnet-stack-test-naming
+trigger: "when creating a test file"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/mkstudy1986-bot/bacnet-stack
+---
+
+# Bacnet Stack Test Naming
+
+## Action
+
+Name test files using the pattern: *.test.ts
+
+## Evidence
+
+- File pattern: *.test.ts
+- Consistent across test files
+
+---
+id: bacnet-stack-workflow-feature-development
+trigger: "when implementing a new feature"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/mkstudy1986-bot/bacnet-stack
+---
+
+# Bacnet Stack Workflow Feature Development
+
+## Action
+
+Follow the feature-development workflow:
+1. Add feature implementation
+2. Add tests for feature
+3. Update documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~14x per month
+- Files: **/*.test.*
+
+---
+id: bacnet-stack-workflow-refactoring
+trigger: "when refactoring code"
+confidence: 0.75
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/mkstudy1986-bot/bacnet-stack
+---
+
+# Bacnet Stack Workflow Refactoring
+
+## Action
+
+Follow the refactoring workflow:
+1. Ensure tests pass before refactor
+2. Refactor code structure
+3. Verify tests still pass
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~5x per month
+- Files: src/**/*
+
+---
+id: bacnet-stack-workflow-feature-development-with-tests
+trigger: "when doing feature development with tests"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/mkstudy1986-bot/bacnet-stack
+---
+
+# Bacnet Stack Workflow Feature Development With Tests
+
+## Action
+
+Follow the feature-development-with-tests workflow:
+1. Implement feature logic in one or more source files (e.g., src/bacnet/basic/object/*.c, src/bacnet/basic/sys/*.c)
+2. Update or add header files as needed (e.g., src/bacnet/basic/object/*.h, src/bacnet/basic/sys/*.h)
+3. Add or update unit/regression tests (e.g., test/bacnet/basic/object/*/src/main.c, test/bacnet/basic/sys/*/src/main.c, test/bacnet/basic/server/*/src/main.c)
+4. Update build/test CMakeLists.txt or Makefile if new test or source files are added
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: src/bacnet/basic/object/*.c, src/bacnet/basic/object/*.h, src/bacnet/basic/sys/*.c
+
+---
+id: bacnet-stack-workflow-bugfix-with-regression-test
+trigger: "when doing bugfix with regression test"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/mkstudy1986-bot/bacnet-stack
+---
+
+# Bacnet Stack Workflow Bugfix With Regression Test
+
+## Action
+
+Follow the bugfix-with-regression-test workflow:
+1. Identify and fix the bug in the relevant source file(s) (e.g., src/bacnet/basic/object/*.c, src/bacnet/basic/sys/*.c, src/bacnet/*.c)
+2. Add or update a test that covers the bug scenario (e.g., test/bacnet/basic/object/*/src/main.c, test/bacnet/basic/sys/*/src/main.c)
+3. Update test build files if necessary (e.g., test/bacnet/basic/object/*/CMakeLists.txt)
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: src/bacnet/basic/object/*.c, src/bacnet/basic/sys/*.c, src/bacnet/*.c
+
+---
+id: bacnet-stack-workflow-changelog-update-for-release-or-fix
+trigger: "when doing changelog update for release or fix"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/mkstudy1986-bot/bacnet-stack
+---
+
+# Bacnet Stack Workflow Changelog Update For Release Or Fix
+
+## Action
+
+Follow the changelog-update-for-release-or-fix workflow:
+1. Edit CHANGELOG.md to add a new entry describing the change
+2. Commit CHANGELOG.md with a message referencing the update
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: CHANGELOG.md
+
+---
+id: bacnet-stack-workflow-object-property-addition-with-tests
+trigger: "when doing object property addition with tests"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/mkstudy1986-bot/bacnet-stack
+---
+
+# Bacnet Stack Workflow Object Property Addition With Tests
+
+## Action
+
+Follow the object-property-addition-with-tests workflow:
+1. Add or update property logic in the object source file (e.g., src/bacnet/basic/object/device.c, src/bacnet/basic/object/lo.c)
+2. Update the corresponding header file (e.g., src/bacnet/basic/object/device.h, src/bacnet/basic/object/lo.h)
+3. Update or add server logic if needed (e.g., src/bacnet/basic/server/bacnet_device.c)
+4. Add or update unit tests for the new property (e.g., test/bacnet/basic/object/device/src/main.c, test/bacnet/basic/object/lo/src/main.c, test/bacnet/basic/server/bacnet_device/src/main.c)
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: src/bacnet/basic/object/*.c, src/bacnet/basic/object/*.h, src/bacnet/basic/server/bacnet_device.c
+
+---
+id: bacnet-stack-workflow-port-or-backend-support-extension
+trigger: "when doing port or backend support extension"
+confidence: 0.55
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/mkstudy1986-bot/bacnet-stack
+---
+
+# Bacnet Stack Workflow Port Or Backend Support Extension
+
+## Action
+
+Follow the port-or-backend-support-extension workflow:
+1. Add or modify source files for the new port/backend (e.g., ports/*/*.c, src/bacnet/basic/bzll/*, src/bacnet/basic/sys/*)
+2. Update or add Makefiles/CMakeLists.txt for build integration
+3. Add or update documentation (e.g., README.md in relevant folder)
+4. Add or update tests for the new backend/port (e.g., test/bacnet/basic/bzll/src/main.c)
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~1x per month
+- Files: ports/*/*.c, src/bacnet/basic/bzll/*, src/bacnet/basic/sys/*
+
+---
+id: bacnet-stack-instinct-file-naming
+trigger: "When creating or renaming files in the codebase"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: mkstudy1986-bot/bacnet-stack
+---
+
+# Bacnet Stack Instinct File Naming
+
+## Action
+
+Use camelCase for file names
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.files
+- Consistent file naming in src/ and test/
+
+---
+id: bacnet-stack-instinct-function-naming
+trigger: "When defining new functions"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: mkstudy1986-bot/bacnet-stack
+---
+
+# Bacnet Stack Instinct Function Naming
+
+## Action
+
+Use camelCase for function names
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.functions
+
+---
+id: bacnet-stack-instinct-class-naming
+trigger: "When defining new classes"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: mkstudy1986-bot/bacnet-stack
+---
+
+# Bacnet Stack Instinct Class Naming
+
+## Action
+
+Use PascalCase for class names
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.classes
+
+---
+id: bacnet-stack-instinct-constant-naming
+trigger: "When defining constants"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: mkstudy1986-bot/bacnet-stack
+---
+
+# Bacnet Stack Instinct Constant Naming
+
+## Action
+
+Use SCREAMING_SNAKE_CASE for constants
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.constants
+
+---
+id: bacnet-stack-instinct-import-style
+trigger: "When importing modules in code"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: mkstudy1986-bot/bacnet-stack
+---
+
+# Bacnet Stack Instinct Import Style
+
+## Action
+
+Use relative imports
+
+## Evidence
+
+- Pattern in codeStyle.importStyle
+
+---
+id: bacnet-stack-instinct-export-style
+trigger: "When exporting modules or functions"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: mkstudy1986-bot/bacnet-stack
+---
+
+# Bacnet Stack Instinct Export Style
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern in codeStyle.exportStyle
+
+---
+id: bacnet-stack-instinct-test-file-location
+trigger: "When adding or updating tests"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: mkstudy1986-bot/bacnet-stack
+---
+
+# Bacnet Stack Instinct Test File Location
+
+## Action
+
+Place test files in the test/ directory, mirroring the src/ structure
+
+## Evidence
+
+- testLocation: separate
+- Pattern in test/bacnet/basic/object/*/src/main.c
+
+---
+id: bacnet-stack-instinct-test-file-pattern
+trigger: "When naming test files"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: mkstudy1986-bot/bacnet-stack
+---
+
+# Bacnet Stack Instinct Test File Pattern
+
+## Action
+
+Use the pattern *.test.ts for test files
+
+## Evidence
+
+- testing.filePattern: *.test.ts
+
+---
+id: bacnet-stack-instinct-unit-tests
+trigger: "When writing tests"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: mkstudy1986-bot/bacnet-stack
+---
+
+# Bacnet Stack Instinct Unit Tests
+
+## Action
+
+Write unit tests for new features and bug fixes
+
+## Evidence
+
+- testTypes: unit
+- Workflow steps for feature and bugfix include unit/regression tests
+
+---
+id: bacnet-stack-instinct-commit-prefixes
+trigger: "When writing commit messages"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: mkstudy1986-bot/bacnet-stack
+---
+
+# Bacnet Stack Instinct Commit Prefixes
+
+## Action
+
+Prefix commit messages with type indicators such as feat:, fix:, bugfix:, chore:, docs:
+
+## Evidence
+
+- Examples: 'Feature: Add strtol support...', 'chore: update CHANGELOG.md...', 'Bugfix: Prevent buffer overflow...'
+- Pattern in commits.prefixes
+
+---
+id: bacnet-stack-instinct-commit-length
+trigger: "When writing commit messages"
+confidence: 0.7
+domain: git
+source: repo-analysis
+source_repo: mkstudy1986-bot/bacnet-stack
+---
+
+# Bacnet Stack Instinct Commit Length
+
+## Action
+
+Keep commit messages concise (average ~79 characters)
+
+## Evidence
+
+- commits.averageLength: 79
+
+---
+id: bacnet-stack-instinct-feature-development-with-tests
+trigger: "When adding a new feature or extending functionality"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: mkstudy1986-bot/bacnet-stack
+---
+
+# Bacnet Stack Instinct Feature Development With Tests
+
+## Action
+
+Implement feature logic, update/add headers, add/update unit/regression tests, and update build/test files if needed
+
+## Evidence
+
+- Workflow: feature-development-with-tests
+- Example commit sequences and files in workflow definition
+
+---
+id: bacnet-stack-instinct-bugfix-with-regression-test
+trigger: "When fixing a bug or vulnerability"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: mkstudy1986-bot/bacnet-stack
+---
+
+# Bacnet Stack Instinct Bugfix With Regression Test
+
+## Action
+
+Fix the bug in source files, add/update a test covering the scenario, and update test build files if necessary
+
+## Evidence
+
+- Workflow: bugfix-with-regression-test
+- Example commit sequences and files in workflow definition
+
+---
+id: bacnet-stack-instinct-changelog-update
+trigger: "When a new feature, bugfix, or security fix is added"
+confidence: 0.99
+domain: workflow
+source: repo-analysis
+source_repo: mkstudy1986-bot/bacnet-stack
+---
+
+# Bacnet Stack Instinct Changelog Update
+
+## Action
+
+Edit CHANGELOG.md to add a new entry and commit with a message referencing the update
+
+## Evidence
+
+- Workflow: changelog-update-for-release-or-fix
+- Example commit sequences and files in workflow definition
+
+---
+id: bacnet-stack-instinct-object-property-addition-with-tests
+trigger: "When extending a BACnet object with new properties or API functions"
+confidence: 0.93
+domain: workflow
+source: repo-analysis
+source_repo: mkstudy1986-bot/bacnet-stack
+---
+
+# Bacnet Stack Instinct Object Property Addition With Tests
+
+## Action
+
+Add/update property logic in object source, update header, update/add server logic if needed, and add/update unit tests
+
+## Evidence
+
+- Workflow: object-property-addition-with-tests
+- Example commit sequences and files in workflow definition
+
+---
+id: bacnet-stack-instinct-port-or-backend-support-extension
+trigger: "When adding or updating support for a new hardware platform, datalink, or backend system"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: mkstudy1986-bot/bacnet-stack
+---
+
+# Bacnet Stack Instinct Port Or Backend Support Extension
+
+## Action
+
+Add/modify source files for the port/backend, update build files, add/update documentation, and add/update tests
+
+## Evidence
+
+- Workflow: port-or-backend-support-extension
+- Example commit sequences and files in workflow definition
+
